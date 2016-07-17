@@ -57,6 +57,8 @@ app.use(localUser);
 /*                             */
 /*******************************/
 
+let bookshelfApi = require('bookshelf-api');
+let apiMiddleware = bookshelfApi({ path: './models' });
 /* 1. ROUTES are loaded here */
 
 // let api = require('./routes/api1');
@@ -68,6 +70,7 @@ let auth = require('./routes/auth');
 // app.use('/api/v1/', api);
 app.use('/auth', auth);
 app.use('/', index);
+app.use('/api/v1', apiMiddleware);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
