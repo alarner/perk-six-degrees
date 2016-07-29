@@ -1,3 +1,12 @@
 .blue {
 	background: green;
 }
+
+h1 {
+	color: #333;
+	font-family: 'Open Sans', sans-serif;
+
+	&:hover {
+		color: #999;
+	}
+}
